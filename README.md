@@ -1,9 +1,6 @@
-# Voting-Poll-System
-Team 8's term project for SWE CSC 4350
-
-CSC 4350 Team 8:
-Software Engineering
-Dr. Rao Casturi
+CSC 4350 Team 8:<br>
+Software Engineering<br>
+Dr. Rao Casturi<br>
 
 ### Team Members:
 
