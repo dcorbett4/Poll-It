@@ -8,7 +8,7 @@
   <?php include 'includes/menubar.php'; ?>
 
   <div class="content-wrapper">
-    <!-- Content Header for page header -->
+    <!-- Content Header for page header like sign out and top navigation -->
     <section class="content-header">
       <h1>
         Dashboard
