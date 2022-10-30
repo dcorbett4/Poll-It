@@ -9,7 +9,7 @@
 		if(!empty($filename)){
 			move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);	
 		}
-		//generate voters id
+		//generate voters id RD infollowing letter
 		$set = '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		$voter = substr(str_shuffle($set), 0, 15);
 
