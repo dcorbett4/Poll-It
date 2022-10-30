@@ -56,7 +56,7 @@ if($password != $pass2){
     if($_SESSION['Admin'] == 1){
     header("Location:/VoteSystem/adminpages/homepage.php");
     }else{
-    header("Location:/VoteSystem/homepage_user.php");   
+    header("Location:/VoteSystem/userpages/homepage_user.php");   
     }
 }
 
