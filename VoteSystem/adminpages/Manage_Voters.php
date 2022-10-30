@@ -90,10 +90,10 @@ $id = $_SESSION['id'];
         let sort = false;
         let personData = [
             {id: 2,username:'money',vote:'False' },
-            {id: 2,username:'comes',vote:'True' },
-            {id: 1,username:'easy',vote:'False' },
-            {id: 3,username:'pretty',vote:'True' },
-            {id: 5,username:'lady',vote:'False' }
+            {id: 2,username:'homes',vote:'True' },
+            {id: 1,username:'lazy',vote:'False' },
+            {id: 3,username:'fun',vote:'True' },
+            {id: 5,username:'common',vote:'False' }
         ];
 
     window.onload = () => {
