@@ -4,25 +4,28 @@ session_start();
 $user = $_SESSION['user'];
 $id = $_SESSION['id'];
 
+include("/xampp/htdocs/VoteSystem/Helpers.php");
+require("/xampp/htdocs/VoteSystem/FormHandlers/action_login.php");
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Home Page Title</title>
-        <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" /> 
-        <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_poll.css" />
-        <script src="/VoteSystem/Javascript/pop_handler.js"></script> 
-    </head>
-    
-    <body>
-    <h2>Welcome, <?php echo $user?></h2>
+
+<head>
+    <title>Home Page Title</title>
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_poll.css" />
+    <script src="/VoteSystem/Javascript/pop_handler.js"></script>
+</head>
+
+<body>
+    <h2>Welcome, <?php echo $user ?></h2>
 
     <div>
-        <img id="profile_pic" src ="/VoteSystem/User_Imgs/defaultimg.jpg" alt="Default_User Image">
+        <img id="profile_pic" src="/VoteSystem/User_Imgs/defaultimg.jpg" alt="Default_User Image">
     </div>
 
     <div>
-    <h3>HOME</h3>
+        <h3>HOME</h3>
         <nav>
             <ul>
 
@@ -40,7 +43,7 @@ $id = $_SESSION['id'];
                 <li><a href="/VoteSystem/adminpages/Manage_Polls.php"> POLL </a></li>
                 <li><a href="/VoteSystem/adminpages/Manage_Choices.php"> CHOICES</a></li>
                 <li><a href="/VoteSystem/adminpages/Manage_Voters.php"> VOTERS</a></li>
-                
+
 
             </ul>
         </nav>
@@ -52,8 +55,8 @@ $id = $_SESSION['id'];
             </ul>
         </nav>
 
-        <form action="/VoteSystem/logout.php" method="POST"> 
-      <button type="submit" name="logout" class="btn btn-primary">Logout</button>
+        <form action="/VoteSystem/logout.php" method="POST">
+            <button type="submit" name="logout" class="btn btn-primary">Logout</button>
         </form>
     </div>
 
@@ -63,7 +66,7 @@ $id = $_SESSION['id'];
             <div class="close-btn" onclick="togglePopup_poll()">&times;</div>
             <h1>Create Poll</h1>
             <form action="#" method="POST">
-            <fieldset>
+                <fieldset>
                     <legend>Poll </legend>
                     <label for="title">Enter Title:</label><br>
                     <input type="text" id="title" name="title" required></input>
@@ -112,8 +115,8 @@ $id = $_SESSION['id'];
             <h1>Reset</h1>
             <div>
                 <h3>Clear All Poll Information ?</h3>
-                <button>Yes</button > 
-                <button>No</button > 
+                <button>Yes</button>
+                <button>No</button>
 
             </div>
         </div>
@@ -122,18 +125,19 @@ $id = $_SESSION['id'];
 
     <div>
         <div>
-        <button class="ui_box" id="create_poll"onclick="togglePopup_poll()">Create Poll</button>
+            <button class="ui_box" id="create_poll" onclick="togglePopup_poll()">Create Poll</button>
         </div>
         <div>
-        <button class="ui_box" id="change_title"onclick="togglePopup_title()">Change Title</button>
+            <button class="ui_box" id="change_title" onclick="togglePopup_title()">Change Title</button>
         </div>
         <div>
-        <button class="ui_box" id="change_end"onclick="togglePopup_end()">Change End Time</button>
+            <button class="ui_box" id="change_end" onclick="togglePopup_end()">Change End Time</button>
         </div>
         <div>
-        <button class="ui_box" id="reset"onclick="togglePopup_reset()">Reset</button>
+            <button class="ui_box" id="reset" onclick="togglePopup_reset()">Reset</button>
         </div>
     </div>
 
-    </body>
+</body>
+
 </html>
