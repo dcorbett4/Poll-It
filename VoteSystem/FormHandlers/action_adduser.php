@@ -6,6 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 require($ROOT_PATH.'Config_Database/Initialize_Tables.php');
 
+$conn = new mysqli($server, $user, $pass, $dbname);
 
 $id = $_POST['ID'];
 $password = $_POST['pass'];
