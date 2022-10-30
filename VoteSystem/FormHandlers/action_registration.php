@@ -5,6 +5,7 @@ require('C:/xampp/htdocs/VoteSystem/Connection.php');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+$conn = new mysqli($server, $user, $pass, $dbname);
 
 $id = $_POST['ID'];
 $password = $_POST['pass'];
