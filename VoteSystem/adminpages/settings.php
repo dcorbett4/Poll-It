@@ -1,8 +1,10 @@
 <?php
 
 session_start();
-$user = $_SESSION['user'];
+$username = $_SESSION['user'];
 $id = $_SESSION['id'];
+include('C:/xampp/htdocs/VoteSystem/Connection.php');
+include('C:/xampp/htdocs/VoteSystem/Helpers.php');
 
 ?>
 <!DOCTYPE html>
@@ -15,12 +17,12 @@ $id = $_SESSION['id'];
     </head>
     
     <body>
-    <h2>Welcome, <?php echo $user?></h2>
+    <h2><?php echo $username ?></h2>
 
-    <div>
-        <img id="profile_pic" src ="/VoteSystem/User_Imgs/defaultimg.jpg" alt="Default_User Image">
-    </div>
-
+    <?php
+    profile_pic();
+    
+    ?>
     <div>
     <h3>HOME</h3>
         <nav>
@@ -62,13 +64,13 @@ $id = $_SESSION['id'];
         <div class="content">
             <div class="close-btn" onclick="togglePopup()">&times;</div>
             <h1>Upload New Image</h1>
-            <form action="#" method="POST">
+            <form action="/Votesystem/FormHandlers/action_imageupload.php" method="post" name="image_submit"enctype="multipart/form-data">
                 <fieldset>
                     <legend>Upload Image </legend>
                     <label for="img">Choose File:</label><br>
-                    <input type="file" id="img_upload" name="img" required></input>
+                    <input type="file" id="img_upload" name="img_upload" required></input>
                 </fieldset>
-                <button class="form-button" type="submit">Upload</button>
+                <input class="form-button" name="submit" type="submit" value="Upload" >
             </form>
         </div>
     </div>
@@ -78,7 +80,7 @@ $id = $_SESSION['id'];
         <div class="content">
             <div class="close-btn" onclick="togglePopup_changeinfo()">&times;</div>
             <h1>Change Information</h1>
-            <form action="#" method="POST">
+            <form action="#" method="POST" >
                 <fieldset>
                     <title>User Information</title>
                     <label for="user">Username:</label><br>

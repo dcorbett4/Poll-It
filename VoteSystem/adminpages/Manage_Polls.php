@@ -1,11 +1,11 @@
 <?php
 
 session_start();
-$user = $_SESSION['user'];
+$username = $_SESSION['user'];
 $id = $_SESSION['id'];
 
 include("/xampp/htdocs/VoteSystem/Helpers.php");
-require("/xampp/htdocs/VoteSystem/FormHandlers/action_login.php");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,11 +18,11 @@ require("/xampp/htdocs/VoteSystem/FormHandlers/action_login.php");
 </head>
 
 <body>
-    <h2>Welcome, <?php echo $user ?></h2>
+    <h2><?php echo $username; ?></h2>
 
-    <div>
-        <img id="profile_pic" src="/VoteSystem/User_Imgs/defaultimg.jpg" alt="Default_User Image">
-    </div>
+    <?php
+    profile_pic();
+    ?>
 
     <div>
         <h3>HOME</h3>

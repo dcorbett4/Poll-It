@@ -3,6 +3,7 @@
 session_start();
 $user = $_SESSION['user'];
 $id = $_SESSION['id'];
+include('C:/xampp/htdocs/VoteSystem/Helpers.php');
 
 ?>
 <!DOCTYPE html>
@@ -19,10 +20,9 @@ $id = $_SESSION['id'];
     <body>
 
     <h2><?php echo $user?></h2>
-    <div>
-        <img id="profile_pic" src ="/VoteSystem/User_Imgs/defaultimg.jpg" alt="Default_User Image">
-
-    </div>
+    <?php
+    profile_pic();   
+    ?>
 
 
     <div>
