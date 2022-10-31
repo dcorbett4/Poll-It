@@ -1,4 +1,0 @@
-<?php
-
-echo "Simple File";
-?>
