@@ -35,6 +35,29 @@ function profile_pic() {
 
 }
 
+function voterinfo(){
+
+    $server = "localhost";
+    $user = "root";
+    $pass = "";
+    $dbname = "VOTEDB"; 
+    $conn = new mysqli($server,$user,$pass, $dbname);
+
+    $id = $_SESSION['id'];
+
+    $sql = "SELECT * FROM logins WHERE user_id != 1";
+    $query = mysqli_query($conn,$sql);
+
+    if ($query) {
+    if (mysqli_num_rows($query) > 0) {
+        $row = mysqli_fetch_array($query);
+    
+    } else {
+
+    }
+    }
+}
+
 
 
 ?>

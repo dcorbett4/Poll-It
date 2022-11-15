@@ -68,13 +68,17 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
         <div class="content">
             <div class="close-btn" onclick="togglePopup_addselection()">&times;</div>
             <h1>Add New Selection</h1>
-            <form action="#" method="POST">
+            <form action="/VoteSystem/FormHandlers/action_addcandidates.php" method="POST" enctype="multipart/form-data">
                 <fieldset>
                     <title>Add Selection </title>
-                    <label for="entry">Selection:</label><br>
-                    <input type="text" id="entry" name="entry"></input>
+                    <br>
+                    <label for="new_choice">Entry:</label>
+                    <input type="text" id="new_choice" name="new_choice"></input>
+                    <br>
+                    <label for="img">Choose File:</label><br>
+                    <input type="file" id="img_upload" name="img_upload" required></input>
                 </fieldset>
-                <button class="form-button" type="submit">Submit</button>
+                <input class="form-button" name="submit" type="submit" value="Upload" ></input>
             </form>
         </div>
     </div>
@@ -89,11 +93,10 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
 
         let sort = false;
         let personData = [
+            <?php
+                ?>
             {id: 6,choice:'Cozumel',selections:'1' },
-            {id: 2,choice:'Disney World',selections:'8' },
-            {id: 1,choice:'United Kingdom',selections:'9' },
-            {id: 3,choice:'Alaska',selections:'6' },
-            {id: 5,choice:'Peru',selections:'3' }
+
         ];
 
     window.onload = () => {

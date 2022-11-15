@@ -66,13 +66,13 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
         <div class="content">
             <div class="close-btn" onclick="togglePopup_voter()">&times;</div>
             <h1>Register New Voter</h1>
-            <form action="#" method="POST">
+            <form action="/VoteSystem/FormHandlers/action_registervoter.php" method="POST">
                 <fieldset>
                     <title>Voter Information</title>
                     <label for="user">Username:</label><br>
-                    <input type="text" id="user" name="user"></input>
-                    <label for="user">Password:</label><br>
-                    <input type="text" id="user" name="user"></input>
+                    <input type="text" id="user" name="user" required></input>
+                    <label for="pass" >Password:</label><br>
+                    <input type="text" id="pass" name="pass" required></input>
                 </fieldset>
                 <button class="form-button" type="submit">Register</button>
             </form>

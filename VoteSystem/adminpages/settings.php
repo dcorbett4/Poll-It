@@ -80,15 +80,22 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
         <div class="content">
             <div class="close-btn" onclick="togglePopup_changeinfo()">&times;</div>
             <h1>Change Information</h1>
-            <form action="#" method="POST" >
+            <form action="/Votesystem/FormHandlers/action_updateusername.php" method="POST" >
                 <fieldset>
-                    <title>User Information</title>
-                    <label for="user">Username:</label><br>
-                    <input type="text" id="user" name="user"></input>
-                    <label for="user">Password:</label><br>
-                    <input type="text" id="user" name="user"></input>
+                    <label for="new_username">Enter New Username:</label>
+                    <input type="text" id="new_username" name="new_username"></input>
                 </fieldset>
-                <button class="form-button" type="submit">Submit</button>
+                <input class="form-button" type="submit" name="submit" value="Submit">
+            </form>
+            <br>
+            <form action="/Votesystem/FormHandlers/action_updateusername.php" method="POST" >
+                <fieldset>
+                    <label for="pass1">New Password:</label>
+                    <input type="text" id="pass1" name="pass1" required></input><br>
+                    <label for="pass2">Re-Enter Password:</label>
+                    <input type="text" id="pass2" name="pass2" required></input>
+                </fieldset>
+                <input class="form-button" type="submit" name="submit" value="Submit">
             </form>
         </div>
     </div>

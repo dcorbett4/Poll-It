@@ -65,7 +65,7 @@ include("/xampp/htdocs/VoteSystem/Helpers.php");
         <div class="content">
             <div class="close-btn" onclick="togglePopup_poll()">&times;</div>
             <h1>Create Poll</h1>
-            <form action="#" method="POST">
+            <form action="/VoteSystem/FormHandlers/action_createpoll.php" method="POST">
                 <fieldset>
                     <legend>Poll </legend>
                     <label for="title">Enter Title:</label><br>
@@ -81,11 +81,11 @@ include("/xampp/htdocs/VoteSystem/Helpers.php");
         <div class="content">
             <div class="close-btn" onclick="togglePopup_title()">&times;</div>
             <h1>Create Poll</h1>
-            <form action="#" method="POST">
+            <form action="/VoteSystem/FormHandlers/action_changetitle.php" method="POST">
                 <fieldset>
                     <legend>Change Title</legend>
-                    <label for="title">Enter New Title:</label><br>
-                    <input type="text" id="title" name="title" required></input>
+                    <label for="new_title">Enter New Title:</label><br>
+                    <input type="text" id="new_title" name="new_title" required></input>
                 </fieldset>
                 <button class="form-button" type="submit">Submit</button>
             </form>
