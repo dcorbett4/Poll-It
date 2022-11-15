@@ -7,20 +7,21 @@ $id = $_SESSION['id'];
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Home Page Title</title>
-        <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" /> 
-    </head>
-    
-    <body>
-    <h2>Welcome, <?php echo $user?></h2>
+
+<head>
+    <title>Home Page Title</title>
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
+</head>
+
+<body>
+    <h2>Welcome, <?php echo $user ?></h2>
 
     <div>
-        <img id="profile_pic" src ="/VoteSystem/User_Imgs/defaultimg.jpg" alt="Default_User Image">
+        <img id="profile_pic" src="/VoteSystem/User_Imgs/defaultimg.jpg" alt="Default_User Image">
     </div>
 
     <div>
-    <h3>HOME</h3>
+        <h3>HOME</h3>
         <nav>
             <ul>
 
@@ -34,20 +35,21 @@ $id = $_SESSION['id'];
         <h3>MANAGE</h3>
         <nav>
             <ul>
-                <li><a href="#"> POLL </a></li>   
+                <li><a href="#"> POLL </a></li>
             </ul>
         </nav>
 
         <h3>SETTINGS</h3>
         <nav>
             <ul>
-                <li><a href="#"> USER </a></li>
+                <li><a href="/VoteSystem/adminpages/settings.php"> USER </a></li>
             </ul>
         </nav>
-        <form action="/VoteSystem/logout.php" method="POST"> 
-      <button type="submit" name="logout" class="btn btn-primary">Logout</button>
+        <form action="/VoteSystem/logout.php" method="POST">
+            <button type="submit" name="logout" class="btn btn-primary">Logout</button>
         </form>
     </div>
 
-    </body>
+</body>
+
 </html>
