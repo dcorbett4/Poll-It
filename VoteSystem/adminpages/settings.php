@@ -9,22 +9,23 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Home Page Title</title>
-        <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" /> 
-        <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_settings.css" />
-        <script src="/VoteSystem/Javascript/pop_handler.js"></script> 
-    </head>
-    
-    <body>
+
+<head>
+    <title>Home Page Title</title>
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_settings.css" />
+    <script src="/VoteSystem/Javascript/pop_handler.js"></script>
+</head>
+
+<body>
     <h2><?php echo $username ?></h2>
 
     <?php
     profile_pic();
-    
+
     ?>
     <div>
-    <h3>HOME</h3>
+        <h3>HOME</h3>
         <nav>
             <ul>
 
@@ -42,7 +43,7 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
                 <li><a href="/VoteSystem/adminpages/Manage_Choices.php"> POLL </a></li>
                 <li><a href="/VoteSystem/adminpages/Manage_Choices.php"> CHOICES</a></li>
                 <li><a href="/VoteSystem/adminpages/Manage_Voters.php"> VOTERS</a></li>
-                
+
 
             </ul>
         </nav>
@@ -54,8 +55,8 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
             </ul>
         </nav>
 
-        <form action="/VoteSystem/logout.php" method="POST"> 
-      <button type="submit" name="logout" class="btn btn-primary">Logout</button>
+        <form action="/VoteSystem/logout.php" method="POST">
+            <button type="submit" name="logout" class="btn btn-primary">Logout</button>
         </form>
     </div>
 
@@ -64,13 +65,13 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
         <div class="content">
             <div class="close-btn" onclick="togglePopup()">&times;</div>
             <h1>Upload New Image</h1>
-            <form action="/Votesystem/FormHandlers/action_imageupload.php" method="post" name="image_submit"enctype="multipart/form-data">
+            <form action="/Votesystem/FormHandlers/action_imageupload.php" method="post" name="image_submit" enctype="multipart/form-data">
                 <fieldset>
                     <legend>Upload Image </legend>
                     <label for="img">Choose File:</label><br>
                     <input type="file" id="img_upload" name="img_upload" required></input>
                 </fieldset>
-                <input class="form-button" name="submit" type="submit" value="Upload" >
+                <input class="form-button" name="submit" type="submit" value="Upload">
             </form>
         </div>
     </div>
@@ -80,7 +81,7 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
         <div class="content">
             <div class="close-btn" onclick="togglePopup_changeinfo()">&times;</div>
             <h1>Change Information</h1>
-            <form action="/Votesystem/FormHandlers/action_updateusername.php" method="POST" >
+            <form action="/Votesystem/FormHandlers/action_updateusername.php" method="POST">
                 <fieldset>
                     <label for="new_username">Enter New Username:</label>
                     <input type="text" id="new_username" name="new_username"></input>
@@ -88,7 +89,7 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
                 <input class="form-button" type="submit" name="submit" value="Submit">
             </form>
             <br>
-            <form action="/Votesystem/FormHandlers/action_updateusername.php" method="POST" >
+            <form action="/Votesystem/FormHandlers/action_updateusername.php" method="POST">
                 <fieldset>
                     <label for="pass1">New Password:</label>
                     <input type="text" id="pass1" name="pass1" required></input><br>
@@ -107,24 +108,26 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
             <h1>Delete Account</h1>
             <div>
                 <h3>Delete User Account ?</h3>
-                <button>Yes</button > 
-                <button>No</button > 
-
+                <form action="/Votesystem/FormHandlers/action_deleteuser.php" method="POST">
+                    <input class="form-button" type="submit" name="submit" value="Yes">
+                </form>
+                <button>No</button>
             </div>
         </div>
     </div>
 
     <div>
         <div>
-        <button class="ui_box" id="upload_image"onclick="togglePopup()">Change Image</button>
+            <button class="ui_box" id="upload_image" onclick="togglePopup()">Change Image</button>
         </div>
         <div>
-        <button class="ui_box" id="change_info"onclick="togglePopup_changeinfo()">Change Password/Username</button>
+            <button class="ui_box" id="change_info" onclick="togglePopup_changeinfo()">Change Password/Username</button>
         </div>
         <div>
-        <button class="ui_box" id="delete_acc"onclick="togglePopup_deleteacct()">Delete Account</button>
+            <button class="ui_box" id="delete_acc" onclick="togglePopup_deleteacct()">Delete Account</button>
         </div>
     </div>
 
-    </body>
+</body>
+
 </html>
