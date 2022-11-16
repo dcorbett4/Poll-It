@@ -42,7 +42,7 @@ $id = $_SESSION['id'];
         <h3>SETTINGS</h3>
         <nav>
             <ul>
-                <li><a href="/VoteSystem/adminpages/settings.php"> USER </a></li>
+                <li><a href="/VoteSystem/userpages/settings_user.php"> USER </a></li>
             </ul>
         </nav>
         <form action="/VoteSystem/logout.php" method="POST">
