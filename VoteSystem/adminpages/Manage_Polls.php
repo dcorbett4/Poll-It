@@ -115,7 +115,9 @@ include("/xampp/htdocs/VoteSystem/Helpers.php");
             <h1>Reset</h1>
             <div>
                 <h3>Clear All Poll Information ?</h3>
-                <button>Yes</button>
+                <form action="/Votesystem/FormHandlers/action_resetpoll.php" method="POST">
+                    <input class="form-button" type="submit" name="submit" value="Yes">
+                </form>
                 <button>No</button>
 
             </div>
