@@ -111,7 +111,6 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
                 <form action="/Votesystem/FormHandlers/action_deleteuser.php" method="POST">
                     <input class="form-button" type="submit" name="submit" value="Yes">
                 </form>
-                <button>No</button>
             </div>
         </div>
     </div>
