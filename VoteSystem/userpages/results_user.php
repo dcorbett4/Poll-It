@@ -67,8 +67,8 @@ require('C:/xampp/htdocs/VoteSystem/Connection.php');
         $query = array();
         while ($row = mysqli_fetch_array($sql)) {
             $query[] = array(
-                'id' => $row['Choice_ID'],
                 'choice' => $row['TEXT'],
+                'selections' => $row['SELECTIONS'],
             );
         }
         ?>
@@ -78,6 +78,8 @@ require('C:/xampp/htdocs/VoteSystem/Connection.php');
 
         window.onload = () => {
             loadtableData(personData);
+            sortColumn('selections');
+            sortColumn('selections');
         };
 
         function loadtableData(personData) {
@@ -85,13 +87,8 @@ require('C:/xampp/htdocs/VoteSystem/Connection.php');
             let dataHtml = '';
             for (let person of personData) {
                 dataHtml += `<tr>
-                    <td>${person.id}</td>
                     <td>${person.choice}</td>
-                    <td>                
-                        <form action="/Votesystem/FormHandlers/action_uservote.php" method="POST">
-                            <input class="form-button" type="submit" name="vote" value="Vote for ${person.id}">
-                        </form>
-                    </td>
+                    <td>${person.selections}</td>
                     </tr>`;
             }
             tablebody.innerHTML = dataHtml;
@@ -137,9 +134,8 @@ require('C:/xampp/htdocs/VoteSystem/Connection.php');
         <table>
             <thead>
                 <tr>
-                    <th onclick="sortColumn('id')">ID</th>
                     <th onclick="sortColumn('choice')">CHOICE</th>
-                    <th>VOTE</th>
+                    <th onclick="sortColumn('selections')">SELECTIONS</th>
                 </tr>
             <tbody id="table_data">
 

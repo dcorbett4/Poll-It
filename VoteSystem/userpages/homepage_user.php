@@ -25,8 +25,8 @@ $id = $_SESSION['id'];
         <nav>
             <ul>
 
-                <li><a href="/VoteSystem/homepage_user.php"> DASHBOARD</a></li>
-                <li><a href="#"> RESULTS</a></li>
+                <li><a href="/VoteSystem/userpages/homepage_user.php"> DASHBOARD</a></li>
+                <li><a href="/VoteSystem/userpages/results_user.php"> RESULTS</a></li>
 
             </ul>
 
