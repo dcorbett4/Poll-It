@@ -15,19 +15,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "SELECT * FROM poll";
     $query = mysqli_query($conn, $sql);
 
-    if (empty($poll_name)) {
-        $_SESSION['reg_err'][] = "Title is Empty<br>";
-        array_push($erro, $_SESSION['reg_err']);
-    }
 
-    if (count($erro) == 0) {
-        $sql = "INSERT INTO poll (title, start, status, end ) VALUES ('$poll_name' , '$date', 0, '$enddate')";
-        if (mysqli_query($conn, $sql)) {
-            echo "Poll Created";
-            header("Location:/VoteSystem/adminpages/Manage_Polls.php");
+    if (mysqli_num_rows($query) == 0) {
+
+        if (empty($poll_name)) {
+            $_SESSION['reg_err'][] = "Title is Empty<br>";
+            array_push($erro, $_SESSION['reg_err']);
+        }
+
+        if (count($erro) == 0) {
+            $sql = "INSERT INTO poll (title, start, status, end ) VALUES ('$poll_name' , '$date', 0, '$enddate')";
+            if (mysqli_query($conn, $sql)) {
+                echo "Poll Created";
+                header("Location:/VoteSystem/adminpages/Manage_Polls.php");
+            }
         }
     }
-
     echo "Poll Already Created Reset To Create A New Poll";
 }
 
