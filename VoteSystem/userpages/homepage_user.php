@@ -35,7 +35,7 @@ $id = $_SESSION['id'];
         <h3>MANAGE</h3>
         <nav>
             <ul>
-                <li><a href="#"> POLL </a></li>
+                <li><a href="/VoteSystem/userpages/vote_user.php"> VOTE </a></li>
             </ul>
         </nav>
 
