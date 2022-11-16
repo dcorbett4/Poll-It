@@ -34,9 +34,17 @@ if(isset($_POST["submit"]) && !empty($_FILES["img_upload"]["name"])){
                 $sql = "INSERT into images (user_id, img_name) VALUES ($id,'".$fileName."')";
             }
             $query = mysqli_query($conn,$sql);
-            header("Location:/VoteSystem/adminpages/settings.php");
+            
+            $sql = "SELECT permission FROM logins WHERE id='$id' ";
+            $query = $conn->query($sql);
+            $result = $query->fetch_array(MYSQLI_ASSOC);
+    
+            if ($result["permission"] == 0) {
+                header("Location:/VoteSystem/userpages/settings_user.php");
+            } else {
+                header("Location:/VoteSystem/adminpages/settings.php");
+            }
         }
     }
 }
 }
-?>
