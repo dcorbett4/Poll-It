@@ -4,7 +4,7 @@ session_start();
 $username = $_SESSION['user'];
 $id = $_SESSION['id'];
 include('C:/xampp/htdocs/VoteSystem/Connection.php');
-include('C:/xampp/htdocs/VoteSystem/Helpers.php');
+include(dirname(__DIR__) . '/Helpers.php');
 
 ?>
 <!DOCTYPE html>

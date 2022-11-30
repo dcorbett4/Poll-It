@@ -5,8 +5,8 @@ $user = $_SESSION['user'];
 $id = $_SESSION['id'];
 
 
-include("/xampp/htdocs/VoteSystem/Helpers.php");
-require('C:/xampp/htdocs/VoteSystem/Connection.php');
+include(dirname(__DIR__) . '/Helpers.php');
+require(dirname(__DIR__) . '/Connection.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 

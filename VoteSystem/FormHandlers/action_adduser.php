@@ -1,6 +1,6 @@
 <?php
 
-include("/xampp/htdocs/VoteSystem/Helpers.php");
+include(dirname(__DIR__) . '/Helpers.php');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -56,9 +56,3 @@ function err_display_adduser(){
         unset($_SESSION['reg_err']);
     }    
 }
-
-
-?>
-
-
-

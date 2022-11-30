@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('C:/xampp/htdocs/VoteSystem/Connection.php');
+require(dirname(__DIR__) . '/Connection.php');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -56,6 +56,3 @@ function err_display_reg(){
         unset($_SESSION['reg_err']);
     }    
 }
-
-
-?>
