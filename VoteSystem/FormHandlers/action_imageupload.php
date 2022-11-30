@@ -8,7 +8,7 @@ require(dirname(__DIR__) . '/Connection.php');
 
 $conn = new mysqli($server, $user, $pass, $dbname);
 
-$imageDir = $ROOT_PATH . "User_Imgs/";
+$imageDir = $ROOT_PATH . "/VoteSystem/User_Imgs/";
 $image_filename = basename($_FILES['img_upload']['name']);
 $imagepath = $imageDir . $image_filename;
 $fileType = pathinfo($imagepath, PATHINFO_EXTENSION);

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Poll Not Created Please Create Poll To Add Choices";
     } else {
 
-        $imageDir = $ROOT_PATH . "Choice_Imgs/";
+        $imageDir = $ROOT_PATH . "/VoteSystem/Choice_Imgs/";
         $image_filename = basename($_FILES["img_upload"]['name']);
         $imagepath = $imageDir . $image_filename;
         $fileType = pathinfo($imagepath, PATHINFO_EXTENSION);
