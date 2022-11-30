@@ -98,9 +98,10 @@ include("/xampp/htdocs/VoteSystem/Helpers.php");
         <div class="content">
             <div class="close-btn" onclick="togglePopup_end()">&times;</div>
             <h1>Change End Time</h1>
-            <form action="#" method="POST">
+            <form action="/Votesystem/FormHandlers/action_changeendtime.php" method="POST">
                 <fieldset>
                     <legend>Select New Endtime </legend>
+                    <input type="datetime-local" id="End_Datetime" name="End_Datetime" required>
                 </fieldset>
                 <button class="form-button" type="submit">Submit</button>
             </form>
