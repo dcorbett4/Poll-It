@@ -3,7 +3,7 @@
 $error = NULL;
 
 
-require('C:/xampp/htdocs/VoteSystem/Connection.php');
+require(dirname(__DIR__) . '/Connection.php');
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
@@ -78,4 +78,3 @@ function err_display_log(){
         unset($_SESSION['log_err']);
     }    
 }
-?>
