@@ -1,7 +1,7 @@
 <?php
 
 //Create a root path to access include/require php files 
-$ROOT_PATH = "/xampp/htdocs/VoteSystem/";
+$ROOT_PATH = dirname(__DIR__);
 
 
 //display profile picture
