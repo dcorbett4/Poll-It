@@ -51,6 +51,20 @@ include('C:/xampp/htdocs/VoteSystem/Helpers.php');
         </form>
     </div>
 
+    <h2><a href="/VoteSystem/userpages/vote_user.php">
+            <?php
+            $check = checkexpiration();
+
+            if ($check == 2) {
+                echo "No Poll Created";
+            } else if ($check == 1) {
+                echo "Poll has Expired";
+            } else if ($check == 0) {
+                echo "Poll is Still Available";
+            }
+            ?>
+        </a></h2>
+
 </body>
 
 </html>
