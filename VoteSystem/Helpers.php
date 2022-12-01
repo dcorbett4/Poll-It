@@ -87,3 +87,31 @@ function checkexpiration()
         return 2; //there is no poll created
     }
 }
+
+function checkvoterstatus()
+{
+    $server = "localhost";
+    $user = "root";
+    $pass = "";
+    $dbname = "VOTEDB";
+    $conn = new mysqli($server, $user, $pass, $dbname);
+
+    $id = $_SESSION['id'];
+
+    $sql = "SELECT * FROM voterstatus WHERE ID = '$id'";
+    $query = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($query) > 0) {
+        $row = mysqli_fetch_array($query);
+        if ($row['Status'] == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        $sql = "INSERT INTO voterstatus VALUES ('$id', 1, 'none')";
+        if (mysqli_query($conn, $sql)) {
+            return false;
+        }
+    }
+}
