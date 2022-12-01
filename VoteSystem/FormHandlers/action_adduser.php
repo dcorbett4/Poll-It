@@ -4,7 +4,7 @@ include("/xampp/htdocs/VoteSystem/Helpers.php");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-require($ROOT_PATH.'Config_Database/Initialize_Tables.php');
+require($ROOT_PATH.'/VoteSystem/Config_Database/Initialize_Tables.php');
 
 $conn = new mysqli($server, $user, $pass, $dbname);
 
@@ -56,9 +56,3 @@ function err_display_adduser(){
         unset($_SESSION['reg_err']);
     }    
 }
-
-
-?>
-
-
-
