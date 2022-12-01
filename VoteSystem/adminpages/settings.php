@@ -3,7 +3,7 @@
 session_start();
 $username = $_SESSION['user'];
 $id = $_SESSION['id'];
-include('C:/xampp/htdocs/VoteSystem/Connection.php');
+include(dirname(__DIR__) . '/Connection.php');
 include(dirname(__DIR__) . '/Helpers.php');
 
 ?>
