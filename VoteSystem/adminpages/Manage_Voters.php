@@ -113,7 +113,14 @@ require(dirname(__DIR__) . '/Connection.php');
             const tablebody = document.getElementById('table_data');
             let dataHtml = '';
             for (let person of personData) {
-                dataHtml += `<tr><td>${person.id}</td><td>${person.username}</td><td>${person.vote}</td><td><button>Edit</button><button>Delete</button></td></tr>`;
+                dataHtml += `<tr>
+                <td>${person.id}</td>
+                <td>${person.username}</td>
+                <td>${person.vote}</td>
+                <td><button>Edit</button>
+                <form action="/Votesystem/FormHandlers/action_deletevoteradmin.php" method="POST">
+                    <input class="form-button" type="submit" name="delete" value="Delete user ${person.id}">
+                </form></td></tr>`;
             }
             tablebody.innerHTML = dataHtml;
         }
