@@ -2,7 +2,10 @@
 <html>
 
 <head>
-    <title>Page Title</title>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Login.css" />
+
 </head>
 
 <body>
@@ -19,26 +22,43 @@
     }
     ?>
 
-    <header>
-        <h1>Login Page</h1>
-    </header>
+<header>
+    <div  class="left_side">
+        <h2 >POLL <span>IT</span></h2>
+    </div>
 
+    <div id="center">
+     
+    </div>
+
+
+</header>
+
+<div class="content">
+    
     <?php
     err_display_log();
     ?>
 
-    <form action="#" method="POST">
-        <fieldset>
-            <legend>Login Form: </legend>
+    <div class="container">
+    <div class="form">
+    <h2> Login</h2> 
+    <form id="login"action="#" method="POST">
+      
             <label for="user">ID:</label><br>
-            <input type="text" id="user" name="user" required><br>
+            <input class="box" type="text" id="user" name="user" required><br>
             <label for="pass">Password:</label><br>
-            <input type="password" id="pass" name="pass" required><br><br>
+            <input class="box" type="password" id="pass" name="pass" required><br><br>
             <input type="submit" value="Login">
-    </form>
+
 
     <button value="Register"> <a style="text-decoration:none; color:black;" href="Registration.php"> Register </a></button>
     </fieldset>
+
+    </div>
+    </div>
+    </div>
+
 </body>
 
 </html>

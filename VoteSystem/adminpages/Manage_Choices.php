@@ -9,87 +9,7 @@ require(dirname(__DIR__) . '/Connection.php');
 
 ?>
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Home Page Title</title>
-    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
-    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_choices.css" />
-    <script src="/VoteSystem/Javascript/pop_handler.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-
-    <h2><?php echo $user ?></h2>
-    <?php
-    profile_pic();
-
-    ?>
-
-
-    <div>
-        <h3>HOME</h3>
-        <nav>
-            <ul>
-
-                <li><a href="/VoteSystem/adminpages/homepage.php"> DASHBOARD</a></li>
-                <li><a href="/VoteSystem/adminpages/results.php"> RESULTS</a></li>
-
-            </ul>
-
-        </nav>
-
-        <h3>MANAGE</h3>
-        <nav>
-            <ul>
-
-                <li><a href="/VoteSystem/adminpages/Manage_Polls.php"> POLL </a></li>
-                <li><a href="/VoteSystem/adminpages/Manage_Choices.php"> CHOICES</a></li>
-                <li><a href="/VoteSystem/adminpages/Manage_Voters.php"> VOTERS</a></li>
-
-
-            </ul>
-        </nav>
-
-        <h3>SETTINGS</h3>
-        <nav>
-            <ul>
-                <li><a href="/VoteSystem/adminpages/settings.php"> USER</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <form action="/VoteSystem/logout.php" method="POST">
-        <button type="submit" name="logout" class="btn btn-primary">Logout</button>
-    </form>
-
-    <div class="popup" id="add_selection">
-        <div class="overlay"></div>
-        <div class="content">
-            <div class="close-btn" onclick="togglePopup_addselection()">&times;</div>
-            <h1>Add New Selection</h1>
-            <form action="/VoteSystem/FormHandlers/action_addcandidates.php" method="POST" enctype="multipart/form-data">
-                <fieldset>
-                    <title>Add Selection </title>
-                    <br>
-                    <label for="new_choice">Entry:</label>
-                    <input type="text" id="new_choice" name="new_choice"></input>
-                    <br>
-                    <label for="img">Choose File:</label><br>
-                    <input type="file" id="img_upload" name="img_upload" required></input>
-                </fieldset>
-                <input class="form-button" name="submit" type="submit" value="Upload"></input>
-            </form>
-        </div>
-    </div>
-
-    <br><br>
-
-    <div id="greeting"></div>
-
-    <script type="text/javascript">
+<script type="text/javascript">
         var count = <?php echo json_encode($id); ?>;
         console.log(count);
 
@@ -166,6 +86,82 @@ require(dirname(__DIR__) . '/Connection.php');
     </script>
 
 
+
+<html>
+
+<head>
+    <title>Home Page Title</title>
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_choices.css" />
+    <script src="/VoteSystem/Javascript/pop_handler.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<header>
+    <div  class="left_side">
+        <h2 >POLL <span>IT</span></h2>
+    </div>
+
+    <div id="center">
+     
+    </div>
+
+    <div class="right_side">
+        <a  href="/VoteSystem/logout.php" name="logout"  class="logout_btn">Logout</a>
+    </div>
+
+
+    </header>
+    
+    <div class="navbar">
+        <center>
+            <?php
+            profile_pic();
+            ?>
+            <h4 id="username"> <?php echo $_SESSION['user']; ?></h4>
+        </center>
+
+        <a href="/VoteSystem/adminpages/homepage.php"><i class="fa fa-home" aria-hidden="true"></i><span>DASHBOARD</span></a>
+        <a href="/VoteSystem/adminpages/Results.php"><i class="fa fa-bar-chart" aria-hidden="true"></i><span>RESULTS</span></a>
+ 
+        <a href="/VoteSystem/adminpages/Manage_Polls.php"><i class="fa fa-question" aria-hidden="true"></i><span>POLL</span></a>
+        <a href="/VoteSystem/adminpages/Manage_Choices.php"><i class="fa fa-th" aria-hidden="true"></i><span>CHOICES</span></a>
+        <a href="/VoteSystem/adminpages/Manage_Voters.php"><i class="fa fa-user" aria-hidden="true"></i><span>VOTERS</span></a>
+        <a href="/VoteSystem/adminpages/settings.php"><i class="fa fa-cogs" aria-hidden="true"></i><span>SETTINGS</span></a>
+    </div>
+
+
+
+
+    <div class="content">
+    <div class="popup" id="add_selection">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn" onclick="togglePopup_addselection()">&times;</div>
+            <h1>Add New Selection</h1>
+            <form action="/VoteSystem/FormHandlers/action_addcandidates.php" method="POST" enctype="multipart/form-data">
+                <fieldset>
+                    <title>Add Selection </title>
+                    <br>
+                    <label for="new_choice">Entry:</label>
+                    <input type="text" id="new_choice" name="new_choice"></input>
+                    <br>
+                    <label for="img">Choose File:</label><br>
+                    <input type="file" id="img_upload" name="img_upload" required></input>
+                </fieldset>
+                <input class="form-button" name="submit" type="submit" value="Upload"></input>
+            </form>
+        </div>
+    </div>
+
+    <br><br>
+    
+
+
     <div>
         <div>
             <button class="ui_box" id="add_voter" onclick="togglePopup_addselection()">ADD SELECTION</button>
@@ -188,6 +184,8 @@ require(dirname(__DIR__) . '/Connection.php');
         </table>
     </div>
 
+    </div>
+    </div>
 </body>
 
 </html>

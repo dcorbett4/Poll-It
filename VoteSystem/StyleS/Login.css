@@ -1,0 +1,109 @@
+
+
+body{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body .content{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background: #292B2E;
+
+}
+
+.container{
+    position: relative;
+    width: 380px;
+    height:420px;
+    background: black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,aqua, aqua);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+.container::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,aqua, aqua);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes animate{
+0%{
+    transform: rotate(0deg);
+}
+100%{
+    transform: rotate(360deg);
+}
+}
+
+.form{
+    position: absolute;
+    background-color: black;
+    inset: 2px;
+    z-index: 10;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form h2{
+    color:aqua;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+#login{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+input{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    position: relative;
+    width:300px;
+    padding: 20px 10px 10px;
+    letter-spacing: 0.1em;
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+button{
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    position: relative;
+    background-color: grey;
+}
+
+.box{
+    background-color: aliceblue;
+}
+
+fieldset{
+    border:0;
+}

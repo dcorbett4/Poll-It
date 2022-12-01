@@ -1,9 +1,8 @@
 <?php
 
 session_start();
+session_destroy();
+session_unset();
 
-if (isset($_POST['logout'])){
-    session_destroy();
-    session_unset();
-    header("Location: /VoteSystem/login.php");
-}
+header("Location: /VoteSystem/login.php");
+?>
