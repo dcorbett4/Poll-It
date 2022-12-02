@@ -42,7 +42,7 @@ require(dirname(__DIR__) . '/Connection.php');
                 dataHtml += `<tr>
                 <td>${person.id}</td>
                 <td>${person.choice}</td>
-                <td><img width="15%"id="profile_picture" src = "/VoteSystem/User_Imgs/${person.img_name}" alt="Profile_Picture"> </td>
+                <td><img width="15%"id="profile_picture" src = "/VoteSystem/Choice_Imgs/${person.img_name}" alt="Profile_Picture"> </td>
                 <td>
                 <form action="/Votesystem/FormHandlers/action_deletechoice.php" method="POST">
                     <input class="form-button" type="submit" name="delete" value="Delete Choice ${person.id}">
