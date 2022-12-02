@@ -19,11 +19,17 @@ require(dirname(__DIR__) . '/Connection.php');
 
         $voterID = $row['id'];
         $statussql = mysqli_query($conn, "SELECT Status FROM voterstatus WHERE ID = '$voterID'");
-        $statusrow = mysqli_fetch_array($statussql);
-        $voterstatus;
-        if ($statusrow['Status'] == 0) {
-            $voterstatus = 'True';
-        } else if ($statusrow['Status'] == 1) {
+
+        if (mysqli_num_rows($statussql) > 0) {
+            $statusrow = mysqli_fetch_array($statussql);
+            $voterstatus;
+            if ($statusrow['Status'] == 0) {
+                $voterstatus = 'True';
+            } else if ($statusrow['Status'] == 1) {
+                $voterstatus = 'False';
+            }
+        } else {
+            mysqli_query($conn, "INSERT INTO voterstatus VALUES ('$voterID', 1, 'none')");
             $voterstatus = 'False';
         }
 
