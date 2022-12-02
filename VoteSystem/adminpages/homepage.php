@@ -59,6 +59,15 @@ checkvoterstatus();
     <div class="content">
         <div id="con">
             <div class="Status">
+        <h2>POLL TITLE: 
+        <?php
+               if(checkpoll()){
+                echo $_SESSION['Polltitle'];
+               }else 
+               echo "NO POLL  CREATED"
+        ?>
+
+        </h2>
         <h2> POLL STATUS: <a href="/VoteSystem/adminpages/Manage_Polls.php">
                 <?php
                 $check = checkexpiration();
@@ -73,7 +82,20 @@ checkvoterstatus();
                 ?>
             </a></h2>
             </div>
-            
+
+        </div>
+        <div id="stats">
+            <div id="totvotes">
+               <h3> TOTAL VOTES </h3>
+    
+            </div>
+            <div id="topchoice">
+                <h3> TOP CHOICE</h3>
+                <?php
+                topchoice();
+               ?>
+            </div>
+
         </div>
     </div>
 

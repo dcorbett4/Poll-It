@@ -116,7 +116,7 @@ function checkvoterstatus()
     }
 }
 
-function timeremaining() 
+function checkpoll() 
 {
     $server = "localhost";
     $user = "root";
@@ -124,28 +124,39 @@ function timeremaining()
     $dbname = "VOTEDB";
     $conn = new mysqli($server, $user, $pass, $dbname);
 
-    $id = $_SESSION['id'];
+    $sql = mysqli_query($conn, "SELECT * FROM poll");
 
-    $sql = "SELECT * FROM poll";
-    $query = mysqli_query($conn, $sql);
-    if (mysqli_num_rows($query) > 0) {
-        $row = mysqli_fetch_array($query);
-        if ($row['Status'] == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    } else {
-        $sql = "INSERT INTO voterstatus VALUES ('$id', 1, 'none')";
-        if (mysqli_query($conn, $sql)) {
-            return false;
-        }
-    }
-
-
- 
+    if (mysqli_num_rows($sql) > 0) {
+        $title = mysqli_fetch_array($sql);
+        $_SESSION['Polltitle'] = $title['Title'];
+        return true;
+    }else 
+    return false;
 
 }
+
+function topchoice()
+{
+    $server = "localhost";
+    $user = "root";
+    $pass = "";
+    $dbname = "VOTEDB";
+    $conn = new mysqli($server, $user, $pass, $dbname);
+
+    $sql = mysqli_query($conn, "SELECT * FROM choices ORDER BY SELECTIONS DESC LIMIT 1");
+    if (mysqli_num_rows($sql) > 0) {
+        $topchoice  = mysqli_fetch_array($sql);
+        $num = $topchoice['TEXT'];
+        $images = $topchoice['IMAGE'];
+        echo "<h2>$num </h2> <br>";
+        echo "<img width=\"10%\"id=\"profile_picture\" src =\"/VoteSystem/User_Imgs/$images\" alt=\"Profile_Picture\">";
+    }else 
+
+    echo "No CHOICE AVAILABLE";
+}
+ 
+
+
 function err_display_vote(){
 
     if(isset($_SESSION['vote_info'])){

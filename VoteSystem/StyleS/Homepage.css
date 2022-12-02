@@ -116,3 +116,35 @@ center{
     text-align: center;
     right:50%;
 }
+
+#stats{
+    margin-top: 40px;
+    text-decoration: underline;
+    font-size: larger;
+    letter-spacing: 0.5em;
+    height: 45%;
+    width: 50%;
+    text-align: center;
+    align-self: center;
+    display: flex;
+    margin-left: 30%;
+    color: #292B2E;
+}
+
+#totvotes{
+    border:2px solid black;
+    border-radius: 8px;
+    width:45%;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px 2px aqua;
+}
+
+#topchoice{
+    border:2px solid black;
+    border-radius: 8px;
+    background-color: #fff;
+     width: 45%;
+     margin-left: 50px;
+     box-shadow: 2px 2px 2px 2px aqua;
+
+}
