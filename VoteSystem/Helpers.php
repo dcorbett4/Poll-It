@@ -116,7 +116,7 @@ function checkvoterstatus()
     }
 }
 
-function checkpoll() 
+function checkpoll()
 {
     $server = "localhost";
     $user = "root";
@@ -130,9 +130,8 @@ function checkpoll()
         $title = mysqli_fetch_array($sql);
         $_SESSION['Polltitle'] = $title['Title'];
         return true;
-    }else 
-    return false;
-
+    } else
+        return false;
 }
 
 function topchoice()
@@ -150,17 +149,35 @@ function topchoice()
         $images = $topchoice['IMAGE'];
         echo "<h2>$num </h2> <br>";
         echo "<img width=\"10%\"id=\"profile_picture\" src =\"/VoteSystem/User_Imgs/$images\" alt=\"Profile_Picture\">";
-    }else 
+    } else
 
-    echo "No CHOICE AVAILABLE";
+        echo "No CHOICE AVAILABLE";
 }
- 
 
 
-function err_display_vote(){
 
-    if(isset($_SESSION['vote_info'])){
-       echo $_SESSION['vote_info'][0];
-       unset($_SESSION['vote_info']);      
+function err_display_vote()
+{
+
+    if (isset($_SESSION['vote_info'])) {
+        echo $_SESSION['vote_info'][0];
+        unset($_SESSION['vote_info']);
+    }
 }
+
+function checktotalvotes()
+{
+    $server = "localhost";
+    $user = "root";
+    $pass = "";
+    $dbname = "VOTEDB";
+    $conn = new mysqli($server, $user, $pass, $dbname);
+
+    $totalvotes = 0;
+    $sql = mysqli_query($conn, "SELECT SELECTIONS FROM choices");
+    while ($row = mysqli_fetch_array($sql)) {
+        $totalvotes += $row['SELECTIONS'];
+    }
+
+    return $totalvotes;
 }
