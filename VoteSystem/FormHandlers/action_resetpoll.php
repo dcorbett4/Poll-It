@@ -19,7 +19,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $sql = "DELETE FROM poll";
             if (mysqli_query($conn, $sql)) {
                 echo "Poll Reset";
-                header("Location:/VoteSystem/adminpages/Manage_Polls.php");
+
+                $sql = "DELETE FROM choices";
+                if (mysqli_query($conn, $sql)) {
+                    echo "Choices Reset";
+
+                    $sql = "DELETE FROM voterstatus";
+                    if (mysqli_query($conn, $sql)) {
+                        echo "Voter Status Reset";
+                        header("Location:/VoteSystem/adminpages/Manage_Polls.php");
+                    }
+                }
             }
         }
     } else {
