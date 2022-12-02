@@ -17,7 +17,7 @@ checkvoterstatus();
     <title>Home Page Title</title>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css?ver=2.0" />
 </head>
 
 <body>
@@ -57,20 +57,24 @@ checkvoterstatus();
 
 
     <div class="content">
-
-        <h2><a href="/VoteSystem/adminpages/Manage_Polls.php">
+        <div id="con">
+            <div class="Status">
+        <h2> POLL STATUS: <a href="/VoteSystem/adminpages/Manage_Polls.php">
                 <?php
                 $check = checkexpiration();
 
                 if ($check == 2) {
-                    echo "No Poll Created";
+                    echo "NO POLL CREATED";
                 } else if ($check == 1) {
-                    echo "Poll has Expired";
+                    echo "EXPIRED";
                 } else if ($check == 0) {
-                    echo "Poll is Still Available";
+                    echo "AVAILABLE";
                 }
                 ?>
             </a></h2>
+            </div>
+            
+        </div>
     </div>
 
 

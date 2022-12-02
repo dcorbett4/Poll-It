@@ -35,10 +35,13 @@
 </header>
 
 <div class="content">
-    
+    <div id="errorbox">
+
     <?php
-    err_display_log();
+    err_display_log(); 
     ?>
+
+    <div>
 
     <div class="container">
     <div class="form">

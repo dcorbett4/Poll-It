@@ -13,10 +13,11 @@ $image_filename = basename($_FILES['img_upload']['name']);
 $imagepath = $imageDir . $image_filename;
 $fileType = pathinfo($imagepath, PATHINFO_EXTENSION);
 
+echo $image_filename;
 echo $imagepath;
 
 if (isset($_POST["submit"]) && !empty($_FILES["img_upload"]["name"])) {
-
+    $id = $_SESSION['id'];
     $validextensions = array('jpg', 'png', 'jpeg', 'gif');
     if (in_array($fileType, $validextensions)) {
         //upload to User_img folder
@@ -31,7 +32,7 @@ if (isset($_POST["submit"]) && !empty($_FILES["img_upload"]["name"])) {
                 if (mysqli_num_rows($query) > 0) {
                     $sql = "UPDATE images SET img_name = '$image_filename' WHERE user_id = $id";
                 } else {
-                    $sql = "INSERT into images (user_id, img_name) VALUES ($id,'" . $fileName . "')";
+                    $sql = "INSERT into images (user_id, img_name) VALUES ($id,'$image_filename')";
                 }
                 $query = mysqli_query($conn, $sql);
 

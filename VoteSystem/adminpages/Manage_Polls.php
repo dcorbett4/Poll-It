@@ -14,7 +14,7 @@ include(dirname(__DIR__) . '/Helpers.php');
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
-    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_poll.css" />
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_poll.css?ver=2.0" />
     <script src="/VoteSystem/Javascript/pop_handler.js"></script>
 </head>
 
@@ -76,7 +76,7 @@ include(dirname(__DIR__) . '/Helpers.php');
         <div class="overlay"></div>
         <div class="content">
             <div class="close-btn" onclick="togglePopup_title()">&times;</div>
-            <h1>Create Poll</h1>
+            <h1>Change Title</h1>
             <form action="/VoteSystem/FormHandlers/action_changetitle.php" method="POST">
                 <fieldset>
                     <legend>Change Title</legend>

@@ -14,7 +14,7 @@ include(dirname(__DIR__) . '/Helpers.php');
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
-    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_settings.css" />
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_settings.css?ver=3.0" />
     <script src="/VoteSystem/Javascript/pop_handler.js"></script>
 </head>
 

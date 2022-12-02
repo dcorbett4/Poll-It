@@ -21,9 +21,10 @@ require(dirname(__DIR__) . '/Connection.php');
             $query[] = array(
                 'id' => $row['Choice_ID'],
                 'choice' => $row['TEXT'],
-                'selections' => $row['SELECTIONS']
+                'img_name' => $row['IMAGE']
             );
         }
+        $sql2 = mysqli_query($conn, "SELECT * FROM logins");
         ?>
 
         let sort = false;
@@ -36,12 +37,13 @@ require(dirname(__DIR__) . '/Connection.php');
         function loadtableData(personData) {
             const tablebody = document.getElementById('table_data');
             let dataHtml = '';
+            
             for (let person of personData) {
                 dataHtml += `<tr>
                 <td>${person.id}</td>
                 <td>${person.choice}</td>
-                <td>${person.selections}/<?php echo mysqli_num_rows($sql); ?></td>
-                <td><button>Edit</button>
+                <td><img width="15%"id="profile_picture" src = "/VoteSystem/User_Imgs/${person.img_name}" alt="Profile_Picture"> </td>
+                <td>
                 <form action="/Votesystem/FormHandlers/action_deletechoice.php" method="POST">
                     <input class="form-button" type="submit" name="delete" value="Delete Choice ${person.id}">
                 </form></td></tr>`;
@@ -92,7 +94,7 @@ require(dirname(__DIR__) . '/Connection.php');
 <head>
     <title>Home Page Title</title>
     <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
-    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_choices.css" />
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_choices.css?ver=2.0" />
     <script src="/VoteSystem/Javascript/pop_handler.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -138,6 +140,7 @@ require(dirname(__DIR__) . '/Connection.php');
 
 
     <div class="content">
+        
     <div class="popup" id="add_selection">
         <div class="overlay"></div>
         <div class="content">
@@ -164,18 +167,21 @@ require(dirname(__DIR__) . '/Connection.php');
 
     <div>
         <div>
-            <button class="ui_box" id="add_voter" onclick="togglePopup_addselection()">ADD SELECTION</button>
+            <button class="ui_box" id="add_voter" onclick="togglePopup_addselection()"><i class="fa-solid fa-circle-plus"></i></button>
         </div>
     </div>
 
+
     <div>
+    <i class="fa-solid fa-circle-plus"></i>
         <table>
             <thead>
                 <tr>
+       
                     <th onclick="sortColumn('id')">ID</th>
                     <th onclick="sortColumn('choice')">CHOICE</th>
-                    <th onclick="sortColumn('selections')">SELECTIONS</th>
-                    <th>Edit/Delete</th>
+                    <th>IMAGES</th>
+                    <th>Delete</th>
                 </tr>
             <tbody id="table_data">
 
@@ -184,6 +190,7 @@ require(dirname(__DIR__) . '/Connection.php');
         </table>
     </div>
 
+    </div>
     </div>
     </div>
 </body>

@@ -18,6 +18,7 @@ while ($row = mysqli_fetch_array($sql)) {
     $query[] = array(
         'id' => $row['Choice_ID'],
         'choice' => $row['TEXT'],
+        'img_name' => $row['IMAGE']
     );
 }
 ?>
@@ -36,6 +37,7 @@ function loadtableData(personData) {
         dataHtml += `<tr>
             <td>${person.id}</td>
             <td>${person.choice}</td>
+            <td><img width="15%"id="profile_picture" src = "/VoteSystem/User_Imgs/${person.img_name}" alt="Profile_Picture"></td>
             <td>                
                 <form action="/Votesystem/FormHandlers/action_uservote.php" method="POST">
                     <input class="form-button" type="submit" name="vote" value="Vote for ${person.id}">
@@ -87,7 +89,7 @@ function sortCharCol(sort, colName) {
 
 <head>
     <title>Home Page Title</title>
-    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css?ver=2.0" />
     <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_choices.css" />
     <script src="/VoteSystem/Javascript/pop_handler.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
@@ -127,12 +129,17 @@ function sortCharCol(sort, colName) {
     </div>
 
     <div class="content">
+    <div id="voteinfo">
+    <h1 class="voter"> <?php err_display_vote(); ?> <h1>
+        
+    <div>
     <div>
         <table>
             <thead>
                 <tr>
                     <th onclick="sortColumn('id')">ID</th>
                     <th onclick="sortColumn('choice')">CHOICE</th>
+                    <th> IMAGE</th>
                     <th>VOTE</th>
                 </tr>
             <tbody id="table_data">

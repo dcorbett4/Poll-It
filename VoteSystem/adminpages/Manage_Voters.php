@@ -39,7 +39,7 @@ require(dirname(__DIR__) . '/Connection.php');
                 <td>${person.id}</td>
                 <td>${person.username}</td>
                 <td>${person.vote}</td>
-                <td><button>Edit</button>
+                <td>
                 <form action="/Votesystem/FormHandlers/action_deletevoteradmin.php" method="POST">
                     <input class="form-button" type="submit" name="delete" value="Delete user ${person.id}">
                 </form></td></tr>`;
@@ -89,7 +89,7 @@ require(dirname(__DIR__) . '/Connection.php');
 <head>
     <title>Home Page Title</title>
     <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
-    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/voters.css">
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/voters.css?ver=2.0">
     <script src="/VoteSystem/Javascript/pop_handler.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -154,7 +154,7 @@ require(dirname(__DIR__) . '/Connection.php');
 
     <div>
         <div>
-            <button class="ui_box" id="add_voter" onclick="togglePopup_voter()">ADD VOTER</button>
+            <button class="ui_box" id="add_voter" onclick="togglePopup_voter()"><i class="fa-solid fa-circle-plus"></i></button>
         </div>
     </div>
 
@@ -165,7 +165,7 @@ require(dirname(__DIR__) . '/Connection.php');
                     <th onclick="sortColumn('id')">ID</th>
                     <th onclick="sortColumn('username')">UserName</th>
                     <th onclick="sortColumn('vote')">Vote Status</th>
-                    <th>Edit/Delete</th>
+                    <th>Delete</th>
                 </tr>
             <tbody id="table_data">
 

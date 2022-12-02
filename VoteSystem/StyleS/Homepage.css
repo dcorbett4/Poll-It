@@ -106,3 +106,13 @@ center{
     width: 100%;
 
 }
+
+#con{
+
+    text-align: center;
+}
+
+.voter{
+    text-align: center;
+    right:50%;
+}

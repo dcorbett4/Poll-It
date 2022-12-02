@@ -80,6 +80,7 @@ require(dirname(__DIR__) . '/Connection.php');
             });
         }
     </script>
+    
 <!DOCTYPE html>
 <html>
 

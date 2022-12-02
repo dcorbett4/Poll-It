@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if (mysqli_query($conn, $sql)) {
                     $sql = "UPDATE voterstatus SET Status = 0, Selected = '$choice' WHERE ID = '$userid'";
                     if (mysqli_query($conn, $sql)) {
-                        echo "VOTED!";
+                        $_SESSION['vote_info'][]= "VOTE CAST";;
                         header("Location:/VoteSystem/userpages/vote_user.php");
                     }
                 }
@@ -39,6 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         echo "Choice Doesn't Exist Go Back and Try Again!";
     } else {
-        echo "You have already voted";
+        $_SESSION['vote_info'][] = "YOU HAVE ALREADY VOTED";
+        header("Location:/VoteSystem/userpages/vote_user.php");
     }
 }
+
