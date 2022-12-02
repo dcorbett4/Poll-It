@@ -30,6 +30,7 @@ checkvoterstatus();
 
         <div class="right_side">
             <a href="/VoteSystem/logout.php" name="logout" class="logout_btn">Logout</a>
+            <a href="/VoteSystem/contact.html" name="Contact" class="logout_btn">Contact Us</a>
         </div>
 
 
