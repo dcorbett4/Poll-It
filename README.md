@@ -33,3 +33,5 @@ Dr. Rao Casturi<br>
 
 ### Why Did You Pick This Project?
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We chose to create a Voting/poll system since it would allow you to ask a question to an audience and be able to see how your users felt about a certain question or statement. For example, you could create a poll/voting system which asks an audience if they like Java or Python more, using the poll system you are able to quickly see what percentage of your audience prefers one language over the other,and our Voting system can be implemented to fit all cases.
+
+**XAMPP:** download: https://www.apachefriends.org/
