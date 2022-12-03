@@ -33,6 +33,7 @@ header{
    padding: 10px;
    background:  aqua; 
    text-decoration: none;
+   text-transform: uppercase;
    float: right;
    margin-top: -30px;
    margin-right: 40px;
@@ -41,11 +42,12 @@ header{
    font-size: 15px;
    font-weight: 600;
    transition: 0.5s;
-   transition-property: background;
+   transition-property: background, color;
 }
 
 .logout_btn:hover{
-    background: blue;
+    background: #1C1E21;
+    color: aqua;
 }
 
 .navbar{
@@ -119,7 +121,7 @@ center{
 
 #stats{
     margin-top: 40px;
-    text-decoration: underline;
+  
     font-size: larger;
     letter-spacing: 0.5em;
     height: 45%;
@@ -128,23 +130,48 @@ center{
     align-self: center;
     display: flex;
     margin-left: 30%;
-    color: #292B2E;
+    color: aqua;
+}
+
+#stats h3{
+    margin-top: 40px;
+    text-decoration: underline;
+
 }
 
 #totvotes{
     border:2px solid black;
     border-radius: 8px;
     width:45%;
-    background-color: #fff;
+    background-color: ;
     box-shadow: 2px 2px 2px 2px aqua;
+}
+
+#totvotes h3{
+    font-weight: 700;
 }
 
 #topchoice{
     border:2px solid black;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: ;
      width: 45%;
      margin-left: 50px;
      box-shadow: 2px 2px 2px 2px aqua;
 
+}
+
+#end{
+    margin-top: 60px;
+    height:10%;
+    font-size: 20px;
+    color: #292B2E;
+    background-color: aqua;
+    text-align: center;
+}
+
+#tots{
+
+    font-size: 180px;
+    text-decoration: unset;
 }

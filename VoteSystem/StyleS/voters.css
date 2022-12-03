@@ -92,6 +92,11 @@ table{
   float: right;
 }
 
+tr{
+  transition: 0.5s;
+  transition-property: background;
+  }
+
 tr:nth-child(even){
   background-color: aqua;
 }
@@ -102,5 +107,26 @@ tr:hover{
 
 .voter{
     left:50%;
-    backgrounf
+
+}
+
+.table_btn{
+  padding: 10px;
+  height: 50px;
+  background:  aqua; 
+  text-decoration: none;
+  text-transform: uppercase;
+
+  margin-left: 80px;
+  color: black;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.5s;
+  transition-property: background, color;
+}
+
+.table_btn:hover{
+   background: #1C1E21;
+   color: aqua;
 }

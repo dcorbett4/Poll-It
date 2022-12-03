@@ -45,7 +45,7 @@ require(dirname(__DIR__) . '/Connection.php');
                 <td><img width="15%"id="profile_picture" src = "/VoteSystem/Choice_Imgs/${person.img_name}" alt="Profile_Picture"> </td>
                 <td>
                 <form action="/Votesystem/FormHandlers/action_deletechoice.php" method="POST">
-                    <input class="form-button" type="submit" name="delete" value="Delete Choice ${person.id}">
+                    <input  class="table_btn" type="submit" name="delete" value="Delete Choice ${person.id}">
                 </form></td></tr>`;
             }
             tablebody.innerHTML = dataHtml;
@@ -94,7 +94,7 @@ require(dirname(__DIR__) . '/Connection.php');
 <head>
     <title>Home Page Title</title>
     <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
-    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_choices.css?ver=2.0" />
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/popup_admin_choices.css?ver=5.0" />
     <script src="/VoteSystem/Javascript/pop_handler.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -140,7 +140,10 @@ require(dirname(__DIR__) . '/Connection.php');
 
 
     <div class="content">
+    <div id="voteinfo">
+    <h1 class="voter"> <?php  if(isset($_SESSION['cand_err'][0])) {print_r($_SESSION['cand_err'][0]);  unset($_SESSION['cand_err']); } ?> <h1>
         
+    </div>
     <div class="popup" id="add_selection">
         <div class="overlay"></div>
         <div class="content">

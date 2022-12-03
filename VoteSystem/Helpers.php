@@ -148,12 +148,23 @@ function topchoice()
         $num = $topchoice['TEXT'];
         $images = $topchoice['IMAGE'];
         echo "<h2>$num </h2> <br>";
-        echo "<img width=\"10%\"id=\"profile_picture\" src =\"/VoteSystem/User_Imgs/$images\" alt=\"Profile_Picture\">";
+        echo "<img width=\"10%\"id=\"profile_picture\" src =\"/VoteSystem/Choice_Imgs/$images\" alt=\"Profile_Picture\">";
     } else
 
-        echo "No CHOICE AVAILABLE";
+        echo "NO CHOICE AVAILABLE";
 }
 
+
+
+function err_display_cand()
+{
+
+    if (isset($_SESSION['cand_err'])) {
+        echo $_SESSION['cand_err'][0];
+        unset($_SESSION['cand_err']);
+    }
+    
+}
 
 
 function err_display_vote()
@@ -163,6 +174,24 @@ function err_display_vote()
         echo $_SESSION['vote_info'][0];
         unset($_SESSION['vote_info']);
     }
+}
+
+function endtime()
+{
+    $server = "localhost";
+    $user = "root";
+    $pass = "";
+    $dbname = "VOTEDB";
+    $conn = new mysqli($server, $user, $pass, $dbname);
+
+    $sql = mysqli_query($conn, "SELECT * FROM poll");
+    $time = ' N/A';
+    if (mysqli_num_rows($sql) > 0) {
+        $title = mysqli_fetch_array($sql);
+        $time = $title['End'];
+    }
+        echo $time;
+
 }
 
 function checktotalvotes()

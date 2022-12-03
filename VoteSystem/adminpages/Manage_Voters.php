@@ -58,7 +58,7 @@ require(dirname(__DIR__) . '/Connection.php');
                 <td>${person.vote}</td>
                 <td>
                 <form action="/Votesystem/FormHandlers/action_deletevoteradmin.php" method="POST">
-                    <input class="form-button" type="submit" name="delete" value="Delete user ${person.id}">
+                    <input class="table_btn" type="submit" name="delete" value="Delete user ${person.id}">
                 </form></td></tr>`;
         }
         tablebody.innerHTML = dataHtml;
@@ -106,7 +106,7 @@ require(dirname(__DIR__) . '/Connection.php');
 <head>
     <title>Home Page Title</title>
     <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css" />
-    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/voters.css?ver=2.0">
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/voters.css?ver=4.0">
     <script src="/VoteSystem/Javascript/pop_handler.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>

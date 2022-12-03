@@ -53,20 +53,53 @@ checkvoterstatus();
 
 
     <div class="content">
-        <h2><a href="/VoteSystem/userpages/vote_user.php">
-                <?php
-                $check = checkexpiration();
+        <div id="con">
+            <div class="Status">
+                <h2>POLL TITLE:
+                    <?php
+                    if (checkpoll()) {
+                        echo $_SESSION['Polltitle'];
+                    } else
+                        echo "NO POLL  CREATED"
+                    ?>
 
-                if ($check == 2) {
-                    echo "No Poll Created";
-                } else if ($check == 1) {
-                    echo "Poll has Expired";
-                } else if ($check == 0) {
-                    echo "Poll is Still Available";
-                }
+                </h2>
+                <h2> POLL STATUS: 
+                        <?php
+                        $check = checkexpiration();
+
+                        if ($check == 2) {
+                            echo "NO POLL CREATED";
+                        } else if ($check == 1) {
+                            echo "EXPIRED";
+                        } else if ($check == 0) {
+                            echo "AVAILABLE";
+                        }
+                        ?>
+                    </h2>
+            </div>
+
+        </div>
+        <div id="stats">
+            <div id="totvotes">
+                <h3> TOTAL VOTES </h3>
+                <div id="tots">
+                <?php echo checktotalvotes(); ?>
+                </div>
+            </div>
+            <div id="topchoice">
+                <h3> TOP CHOICE</h3>
+                <?php
+                topchoice();
                 ?>
-            </a></h2>
+            </div>
+
+        </div>
+        <div id="end">
+            <h3>EXPIRATION: <?php endtime(); ?></h3>
+        </div>
     </div>
+
 
 </body>
 

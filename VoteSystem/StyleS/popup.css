@@ -65,14 +65,19 @@
   #upload_image, #add_voter {
     top:25%;
     left:40%;
+    color: #D9DADC;
   }
   #change_info {
     top:25%;
     left:80%;
+    color: #D9DADC;
+
   }
   #delete_acc {
     top:50%;
     left:40%;
+    color: #D9DADC;
+
   }
 
   #form-button{

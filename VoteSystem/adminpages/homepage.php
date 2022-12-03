@@ -17,7 +17,7 @@ checkvoterstatus();
     <title>Home Page Title</title>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css?ver=2.0" />
+    <link rel="stylesheet" type="text/css" href="/VoteSystem/StyleS/Homepage.css?ver=4.0" />
 </head>
 
 <body>
@@ -87,7 +87,9 @@ checkvoterstatus();
         <div id="stats">
             <div id="totvotes">
                 <h3> TOTAL VOTES </h3>
+                <div id="tots">
                 <?php echo checktotalvotes(); ?>
+                </div>
             </div>
             <div id="topchoice">
                 <h3> TOP CHOICE</h3>
@@ -96,6 +98,9 @@ checkvoterstatus();
                 ?>
             </div>
 
+        </div>
+        <div id="end">
+            <h3>EXPIRATION: <?php endtime(); ?></h3>
         </div>
     </div>
 

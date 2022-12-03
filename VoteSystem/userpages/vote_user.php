@@ -37,10 +37,10 @@ function loadtableData(personData) {
         dataHtml += `<tr>
             <td>${person.id}</td>
             <td>${person.choice}</td>
-            <td><img width="15%"id="profile_picture" src = "/VoteSystem/User_Imgs/${person.img_name}" alt="Profile_Picture"></td>
+            <td><img width="15%"id="profile_picture" src = "/VoteSystem/Choice_Imgs/${person.img_name}" alt="Profile_Picture"></td>
             <td>                
                 <form action="/Votesystem/FormHandlers/action_uservote.php" method="POST">
-                    <input class="form-button" type="submit" name="vote" value="Vote for ${person.id}">
+                    <input class="table_btn" type="submit" name="vote" value="Vote for ${person.id}">
                 </form>
             </td>
             </tr>`;
@@ -129,10 +129,10 @@ function sortCharCol(sort, colName) {
     </div>
 
     <div class="content">
-    <div id="voteinfo">
+    <div id="votenfo">
     <h1 class="voter"> <?php err_display_vote(); ?> <h1>
         
-    <div>
+    </div>
     <div>
         <table>
             <thead>

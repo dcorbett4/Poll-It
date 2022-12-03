@@ -64,6 +64,8 @@
   z-index: 0;
   margin-top: 0;
   top: 10px;
+  transition: 0.5s;
+  transition-property: background-color;
 }
 .ui_box:hover {
   background-color: aqua;
@@ -90,6 +92,12 @@ table{
   width: 80%;
   font-weight: 600;
   float: right;
+
+}
+
+tr{
+transition: 0.5s;
+transition-property: background;
 }
 
 tr:nth-child(even){
@@ -98,4 +106,32 @@ tr:nth-child(even){
 
 tr:hover{
   background-color: grey;
+}
+
+#voteinfo{
+  position: absolute;
+  height: 30px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.table_btn{
+  padding: 10px;
+  height: 60px;
+  background:  aqua; 
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: -30px;
+  margin-left: 80px;
+  color: black;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.5s;
+  transition-property: background, color;
+}
+
+.table_btn:hover{
+   background: #1C1E21;
+   color: aqua;
 }

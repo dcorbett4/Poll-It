@@ -16,7 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     if (mysqli_num_rows($query) == 0) {
-        echo "Poll Not Created Please Create Poll To Add Choices";
+        $_SESSION['cand_err'][]= "<a href=\"/VoteSystem/adminpages/Manage_Polls.php\">Poll Not Created Please Create Poll To Add Choices</a>";
+        if(isset($_SESSION['cand_err'])){
+        header("Location:/VoteSystem/adminpages/Manage_Choices.php");
+        }
     } else {
 
         $imageDir = $ROOT_PATH . "/VoteSystem/Choice_Imgs/";
